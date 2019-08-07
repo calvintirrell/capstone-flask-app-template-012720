@@ -5,7 +5,7 @@ app = Flask(__name__, static_url_path="")
 @app.route("/")
 def index():
     """Return the main page."""
-    return render_template("index.html")
+    return app.send_static_file("index.html")
 
 
 @app.route("/output", methods=["GET", "POST"])
@@ -14,5 +14,5 @@ def output():
     data = request.get_json(force=True)
     # every time the user_input identifier
     print(data)
-    return jsonify(data["user_input"])
+    return jsonify({"user_output": data["user_input"]})
 

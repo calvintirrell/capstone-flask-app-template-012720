@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>First Flask app</title>
+  </head>
+  <style>
+    .yellow {
+      background-color: yellow
+    }
+  </style>
+  <body>
+    <h1>User Input</h1>
+    <textarea id="user_input"></textarea>
+    <button id="click_button">Click here</button>
+    <br></br>
+    <h1>User Output</h1>
+    <span class="yellow" id="result"></span>
+    <script>
+      const submitButton = document.getElementById("click_button");
+
+      submitButton.addEventListener("click", () => {
+        const userInputTextarea = document.getElementById("user_input");
+        const userInputValue = userInputTextarea.value;
+        fetch("/output", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({"user_input": userInputValue})
+        })
+        .then(resp => resp.json())
+        .then(json => {
+          const resultSpan = document.getElementById("result");
+          resultSpan.innerText = json["user_output"];
+        })
+      })
+    </script>
+  </body>
+</html>
