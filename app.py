@@ -8,11 +8,11 @@ app = Flask(__name__, static_url_path="/static")
 @app.route("/")
 def index():
     """Return the main page."""
-    return send_from_directory("static", "index.html")
+    return send_from_directory("static", "index2.html")
 
 @app.route("/get_results", methods=["POST"])
 def get_results():
-    """ Predict the class of wine based on the inputs. """
+    """ Predict the approval (or not) of credit card application based on the inputs. """
     data = request.form
     print(data)
 
