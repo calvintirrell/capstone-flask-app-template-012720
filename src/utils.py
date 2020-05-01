@@ -2,10 +2,9 @@ def validate_input(data):
     test_value = []
     errors = []
     
-    EXPECTED_FEATURES = ("Alcohol", "Malic acid", "Ash", "Alcalinity of ash",
-                         "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols",
-                         "Proanthocyanins", "Color intensity", "Hue",
-                         "OD280/OD315 of diluted wines", "Proline")
+    EXPECTED_FEATURES = ('Gender', 'Age', 'Debt', 'Married', 'BankClient', 'SchoolLevel',
+                         'Ethnicity', 'YearsWorked', 'PriorDefault', 'Employed', 'CreditScore',
+                         'Citizen', 'Income', 'Approval')
     
     if not data:
         errors.append("Form data must not be empty")
@@ -20,6 +19,3 @@ def validate_input(data):
                     errors.append(f"Invalid value for field {feature}: '{data[feature]}'")
 
     return test_value, errors
-
-
-    

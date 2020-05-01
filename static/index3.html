@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Credit Approval</title>
+    <link rel = "stylesheet" media = "screen" href = "/static/bootstrap.min.css">
+  </head>
+  <body>
+    <div class = "jumbotron">
+      <div class = "container">
+        <h1 class = "display-3">Credit Card Classifier</h1>
+        <br>
+        <p>
+          Pick a fictional person below to see if their information would allow<br>
+          them to be approved for a credit card based on my trained model.
+        </p>
+        <br>
+        <p>
+          <form action = "/get_results" method = "post">
+
+            <input type = "radio" id = "male" name = "selection" value = "user_1">
+            <label for = "user_1">Bond. James Bond.</label><br><br>
+
+            <input type = "radio" id = "female" name = "selection" value = "user_2">
+            <label for = "user_2">I'm Hermoine Granger and you are?</label><br><br>
+
+            <input type = "radio" id = "female" name = "selection" value = "user_3">
+            <label for = "user_3">Catwoman. Watch your pockets.</label><br><br>
+
+            <input type = "radio" id = "male" name = "selection" value = "user_4">
+            <label for = "user_4">Maverick, the top gun.</label><br><br>
+
+            <input type = "submit" class = "btn btn-primary btn-lg" value = "Submit">
+          </form>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

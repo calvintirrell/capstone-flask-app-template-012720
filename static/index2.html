@@ -1,41 +1,41 @@
 <html>
   <head>
     <title>Credit Approval</title>
-    <link rel="stylesheet" media="screen" href="/static/bootstrap.min.css">
+    <link rel = "stylesheet" media = "screen" href = "/static/bootstrap.min.css">
   </head>
   <body>
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-3">Credit Card Classifier</h1>
+    <div class = "jumbotron">
+      <div class = "container">
+        <h1 class = "display-3">Credit Card Classifier</h1>
         <p>
           My cool content will go here
         </p>
         <p>
-          <form action="/get_results" method="post">
+          <form action = "/get_results" method = "post">
             <p>Prior loan or credit default?</p>
             <p>0 = Yes | 1 = No</p>
-            <input type="text" name="Prior loan or credit default" value="1">
+            <input type="text" name="PriorDefault" value = "1">
             <p></p>
             <p>Income</p>
-            <input type="text" name="Income" value="300">
+            <input type = "text" name = "Income" value = "300">
             <p></p>
             <p>Credit score</p>
-            <input type="text" name="Credit score" value="747">
+            <input type = "text" name = "CreditScore" value = "747">
             <p></p>
             <p>Years of work experience</p>
-            <input type="text" name="Years of work experience" value="3">
+            <input type = "text" name = "YearsWorked" value = "3">
             <p></p>
             <p>Debt</p>
-            <input type="text" name="Debt" value="5">
+            <input type = "text" name = "Debt" value = "5">
             <p></p>
             <p>Age</p>
-            <input type="text" name="Age" value="25">
+            <input type = "text" name = "Age" value = "25">
             <p></p>
             <p>Employed</p>
             <p>0 = Yes | 1 = No</p>
-            <input type="text" name="Employed" value="1">
+            <input type = "text" name = "Employed" value = "1">
             <br>
-            <input type="submit" class="btn btn-primary btn-lg" value="Results!">
+            <input type = "submit" class = "btn btn-primary btn-lg" value = "Results!">
           </form>
         </p>
       </div>
