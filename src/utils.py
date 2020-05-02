@@ -19,3 +19,10 @@ def validate_input(data):
                     errors.append(f"Invalid value for field {feature}: '{data[feature]}'")
 
     return test_value, errors
+
+def get_features(selection):
+
+    # do stuff here
+    # use string 'user_1' to retrieve features
+    # return inputs
+    return [0]
