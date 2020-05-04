@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path = "/static")
 @app.route("/")
 def index():
     """Return the main page."""
-    return send_from_directory("static", "index3.html")
+    return send_from_directory("static", "index.html")
 
 @app.route("/get_results", methods = ["POST"])
 def get_results():
@@ -22,12 +22,27 @@ def get_results():
 
     prediction = card_predict(test_value)
 
-    if prediction == 1:
-        prediction = 'Approved'
-    else:
-        prediction = 'Denied'
+    if selection == 'James_Bond':
+        prediction = """James you have been approved. Congratulations on your new credit card!
+        You are approved for a credit card by having a strong credit score, high income and over 5 years of work experience.
+        Despite a somewhat high amount of debt your positive attributes offset this."""
+        return render_template("approved.html", prediction = prediction)
 
-    return render_template("results.html", prediction = prediction)
+    elif selection == 'Hermoine_Granger':
+        prediction = """Hermoine you have been approved. Congratulations on your new credit card!
+        You are approved for a credit card by having a solid credit score and minimal debt.
+        A modest income and minimal years of work experience were not enough to deny you credit."""
+        return render_template("approved.html", prediction = prediction)
+
+    elif selection == 'Catwoman':
+        prediction = """Catwoman, sorry but we are unable to extend you credit at this time.
+        Minimal work experience and a low credit score along with a modest income and some debt don't line up for approval."""
+        return render_template("denied.html", prediction = prediction) 
+
+    elif selection == 'Maverick':
+        prediction = """Maverick, sorry but we are unable to extend you credit at this time.
+        Despite over 6 years of work experience and low debt, a low credit score and minimal income are not in your favor."""
+        return render_template("denied.html", prediction = prediction) 
 
     # test_value, errors = validate_input(data)
 
