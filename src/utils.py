@@ -21,8 +21,32 @@ def validate_input(data):
     return test_value, errors
 
 def get_features(selection):
+    # use string "name"" to retrieve inputs to use in model
 
-    # do stuff here
-    # use string 'user_1' to retrieve features
-    # return inputs
-    return [0]
+    if selection == "James_Bond":
+        # [...1] = Approved
+        jb = [1, 52, 15, 1, 0, 1, 7, 5.5, 1, 1, 14, 0, 2200]
+
+        print(jb)
+        return jb
+
+    elif selection == "Hermoine_Granger":
+        # [...1] = Approved
+        hg = [0, 30, 0.5, 1, 0, 1, 7, 1.75, 1, 1, 11, 0, 540]
+
+        print(hg)
+        return hg
+
+    elif selection == "Catwoman":
+        # [...0] = Denied
+        c = [0, 37, 2.665, 1, 0, 2, 7, 0.165, 0, 0, 0, 0, 501]
+
+        print(c)
+        return c
+
+    else:
+        # [...0] = Denied
+        m = [1, 57, 2, 1, 0, 5, 2, 6.5, 0, 1, 1, 0, 10]
+
+        print(m)
+        return m

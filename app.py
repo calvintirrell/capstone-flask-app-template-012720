@@ -18,16 +18,22 @@ def get_results():
     print(data)
 
     selection = data['selection']
-    test_value = get_features(selection) # finish function in utils.py
+    test_value = get_features(selection)
 
-    predicted_class = card_predict(test_value)
-    return render_template("results.html", predicted_class = predicted_class)
+    prediction = card_predict(test_value)
+
+    if prediction == 1:
+        prediction = 'Approved'
+    else:
+        prediction = 'Denied'
+
+    return render_template("results.html", prediction = prediction)
 
     # test_value, errors = validate_input(data)
 
     # if not errors:
-    #     predicted_class = card_predict(test_value)
-    #     return render_template("results.html", predicted_class = predicted_class)
+    #     prediction = card_predict(test_value)
+    #     return render_template("results.html", prediction = prediction)
     # else:
     #     return abort(400, errors)
 
