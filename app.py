@@ -44,13 +44,5 @@ def get_results():
         Despite over 6 years of work experience and low debt, a low credit score and minimal income are not in your favor."""
         return render_template("denied.html", prediction = prediction) 
 
-    # test_value, errors = validate_input(data)
-
-    # if not errors:
-    #     prediction = card_predict(test_value)
-    #     return render_template("results.html", prediction = prediction)
-    # else:
-    #     return abort(400, errors)
-
 if __name__ == "__main__":
     serve(app, host = '0.0.0.0', port = 5000)
