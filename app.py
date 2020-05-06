@@ -45,4 +45,8 @@ def get_results():
         return render_template("denied.html", prediction = prediction) 
 
 if __name__ == "__main__":
-    serve(app, host = '0.0.0.0', port = 5000)
+    # port = 80 for AWS EC2 instance deployment
+    serve(app, host = '0.0.0.0', port = 80)
+
+    # port = 5000 for local computer testing
+    # serve(app, host = '0.0.0.0', port = 5000)
