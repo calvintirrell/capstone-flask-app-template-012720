@@ -1,4 +1,8 @@
-# Capstone Flask App Template
+# Capstone Flask App
+
+This repository is the Flask web app for the main project, linked below.
+
+[The main GitHub project repository is here.](https://github.com/calvintirrell/Capstone_Credit_Card_Classification)
 
 ## Requirements
 
